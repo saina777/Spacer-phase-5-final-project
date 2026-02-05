@@ -12,17 +12,17 @@ const BookingModal = ({ isOpen, onClose, space }) => {
     purpose: ''
   });
   
-//   const dispatch = useDispatch();
-//   const { isAuthenticated, user } = useSelector(state => state.auth);
-//   const { loading } = useSelector(state => state.bookings);
+  const dispatch = useDispatch();
+  const { isAuthenticated, user } = useSelector(state => state.auth);
+  const { loading } = useSelector(state => state.bookings);
 
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     
-//     if (!isAuthenticated) {
-//       toast.error('Please login to make a booking');
-//       return;
-//     }
+    if (!isAuthenticated) {
+      toast.error('Please login to make a booking');
+      return;
+    }
 
 //     const bookingData = {
 //       spaceId: space.id,
