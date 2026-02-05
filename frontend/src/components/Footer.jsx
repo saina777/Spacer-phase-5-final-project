@@ -19,53 +19,53 @@ const Footer = () => {
             </div>
           </div>
 
-{/* //           <div>
-//             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-//             <ul className="space-y-2">
-//               <li><a href="#home" className="text-gray-300 hover:text-white">Home</a></li>
-//               <li><a href="#spaces" className="text-gray-300 hover:text-white">Browse Spaces</a></li>
-//               <li><a href="#about" className="text-gray-300 hover:text-white">About Us</a></li>
-//               <li><a href="#contact" className="text-gray-300 hover:text-white">Contact</a></li>
-//             </ul>
-//           </div>
+          <div>
+            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <ul className="space-y-2">
+              <li><a href="#home" className="text-gray-300 hover:text-white">Home</a></li>
+              <li><a href="#spaces" className="text-gray-300 hover:text-white">Browse Spaces</a></li>
+              <li><a href="#about" className="text-gray-300 hover:text-white">About Us</a></li>
+              <li><a href="#contact" className="text-gray-300 hover:text-white">Contact</a></li>
+            </ul>
+          </div>
 
-//           <div>
-//             <h4 className="text-lg font-semibold mb-4">Services</h4>
-//             <ul className="space-y-2">
-//               <li><a href="#" className="text-gray-300 hover:text-white">Coworking Spaces</a></li>
-//               <li><a href="#" className="text-gray-300 hover:text-white">Meeting Rooms</a></li>
-//               <li><a href="#" className="text-gray-300 hover:text-white">Event Spaces</a></li>
-//               <li><a href="#" className="text-gray-300 hover:text-white">Private Offices</a></li>
-//             </ul>
-//           </div>
+          <div>
+            <h4 className="text-lg font-semibold mb-4">Services</h4>
+            <ul className="space-y-2">
+              <li><a href="#" className="text-gray-300 hover:text-white">Coworking Spaces</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-white">Meeting Rooms</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-white">Event Spaces</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-white">Private Offices</a></li>
+            </ul>
+          </div>
 
-//           <div>
-//             <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
-//             <div className="space-y-3">
-//               <div className="flex items-center">
-//                 <FiMail className="mr-3" />
-//                 <span className="text-gray-300">hello@spacer.com</span>
-//               </div>
-//               <div className="flex items-center">
-//                 <FiPhone className="mr-3" />
-//                 <span className="text-gray-300">+1 (555) 123-4567</span>
-//               </div>
-//               <div className="flex items-center">
-//                 <FiMapPin className="mr-3" />
-//                 <span className="text-gray-300">123 Business Ave, City</span>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
+          {/* <div>
+            <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
+            <div className="space-y-3">
+              <div className="flex items-center">
+                <FiMail className="mr-3" />
+                <span className="text-gray-300">hello@spacer.com</span>
+              </div>
+              <div className="flex items-center">
+                <FiPhone className="mr-3" />
+                <span className="text-gray-300">+1 (555) 123-4567</span>
+              </div>
+              <div className="flex items-center">
+                <FiMapPin className="mr-3" />
+                <span className="text-gray-300">123 Business Ave, City</span>
+              </div>
+            </div>
+          </div>
+        </div>
 
-//         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-//           <p className="text-gray-400">
-//             © 2024 Spacer. All rights reserved. | Privacy Policy | Terms of Service
-//           </p>
-//         </div>
-//       </div>
-//     </footer>
-//   );
-// };
+        <div className="border-t border-gray-800 mt-8 pt-8 text-center">
+          <p className="text-gray-400">
+            © 2024 Spacer. All rights reserved. | Privacy Policy | Terms of Service
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+};
 
-// export default Footer; */}
+export default Footer; */}
