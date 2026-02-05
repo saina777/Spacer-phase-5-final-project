@@ -4,13 +4,13 @@ import { createBooking } from '../redux/bookingsSlice';
 import { FiX, FiCalendar, FiClock } from 'react-icons/fi';
 import { toast } from 'react-toastify';
 
-// const BookingModal = ({ isOpen, onClose, space }) => {
-//   const [formData, setFormData] = useState({
-//     date: '',
-//     startTime: '',
-//     endTime: '',
-//     purpose: ''
-//   });
+const BookingModal = ({ isOpen, onClose, space }) => {
+  const [formData, setFormData] = useState({
+    date: '',
+    startTime: '',
+    endTime: '',
+    purpose: ''
+  });
   
 //   const dispatch = useDispatch();
 //   const { isAuthenticated, user } = useSelector(state => state.auth);
