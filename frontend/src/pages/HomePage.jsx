@@ -1,12 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from '../components/Navbar.jsx'
 import Hero from '../components/Hero.jsx'
 import FeatureCard from '../components/FeatureCard.jsx'
 import CTASection from '../components/CTASection.jsx'
 import StatsCounter from '../components/StatsCounter.jsx'
 import Footer from '../components/Footer.jsx'
+import LoginModal from '../components/LoginModal.jsx'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 export default function HomePage() {
+  const [showLoginModal, setShowLoginModal] = useState(false)
+
   const features = [
     {title: 'Easy Discovery', desc: 'Find the perfect space by location, price, capacity, and amenities'},
     {title: 'Secure Booking', desc: 'Book with confidence with our secure payment and confirmation system'},
@@ -17,13 +22,19 @@ export default function HomePage() {
     'Coworking Spaces','Private Offices','Meeting Rooms','Conference Centers','Creative Studios','Commercial Kitchens'
   ]
 
+  const handleGetStarted = () => {
+    setShowLoginModal(true)
+  }
+
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar />
+      <Navbar onLoginClick={handleGetStarted} />
       <main className="flex-1">
-        <Hero />
+        <section id="home">
+          <Hero onGetStartedClick={handleGetStarted} />
+        </section>
 
-        <section className="max-w-6xl mx-auto px-6 py-12">
+        <section id="about" className="max-w-6xl mx-auto px-6 py-12">
           <h2 className="text-3xl font-semibold mb-4">Why Choose Spacer?</h2>
           <p className="text-gray-600 mb-8">Trusted by businesses and individuals across Kenya</p>
 
@@ -34,7 +45,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="bg-gray-50 py-12">
+        <section id="spaces" className="bg-gray-50 py-12">
           <div className="max-w-6xl mx-auto px-6">
             <h3 className="text-2xl font-semibold mb-4">Browse by Space Type</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
@@ -73,10 +84,28 @@ export default function HomePage() {
 
         <StatsCounter />
 
-        <CTASection />
+        <CTASection onGetStartedClick={handleGetStarted} />
       </main>
 
       <Footer />
+      
+      <LoginModal 
+        isOpen={showLoginModal} 
+        onClose={() => setShowLoginModal(false)} 
+      />
+      
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </div>
   )
 }

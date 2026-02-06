@@ -1,5 +1,20 @@
-<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="200" height="200" fill="#E5E7EB"/>
-  <path d="M100 40V160M40 100H160" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round"/>
-  <circle cx="100" cy="100" r="30" stroke="#9CA3AF" stroke-width="2"/>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Simple gradient background -->
+  <rect width="800" height="600" fill="#F3F4F6"/>
+  
+  <!-- Simple grid icon -->
+  <g transform="translate(325, 225)">
+    <rect x="0" y="0" width="70" height="70" rx="8" fill="#3B82F6" opacity="0.8"/>
+    <rect x="80" y="0" width="70" height="70" rx="8" fill="#3B82F6" opacity="0.6"/>
+    <rect x="0" y="80" width="70" height="70" rx="8" fill="#3B82F6" opacity="0.6"/>
+    <rect x="80" y="80" width="70" height="70" rx="8" fill="#3B82F6" opacity="0.8"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="400" y="420" font-family="system-ui, sans-serif" font-size="32" fill="#1F2937" text-anchor="middle" font-weight="600">
+    SPACER
+  </text>
+  <text x="400" y="455" font-family="system-ui, sans-serif" font-size="16" fill="#6B7280" text-anchor="middle">
+    No Image Available
+  </text>
 </svg>

@@ -48,11 +48,11 @@ const Footer = () => {
               </div>
               <div className="flex items-center">
                 <FiPhone className="mr-3" />
-                <span className="text-gray-300">+1 (555) 123-4567</span>
+                <span className="text-gray-300">+254 712 345 678</span>
               </div>
               <div className="flex items-center">
                 <FiMapPin className="mr-3" />
-                <span className="text-gray-300">123 Business Ave, City</span>
+                <span className="text-gray-300">Westlands, Nairobi, Kenya</span>
               </div>
             </div>
           </div>
@@ -60,7 +60,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400">
-            © 2024 Spacer. All rights reserved. | Privacy Policy | Terms of Service
+            © 2026 Spacer. All rights reserved. | Privacy Policy | Terms of Service
           </p>
         </div>
       </div>

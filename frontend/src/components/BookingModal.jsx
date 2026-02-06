@@ -122,7 +122,7 @@ const BookingModal = ({ isOpen, onClose, space }) => {
           <div className="bg-gray-50 p-3 rounded-lg">
             <div className="flex justify-between">
               <span>Total Price:</span>
-              <span className="font-semibold">${calculatePrice()}</span>
+              <span className="font-semibold">KSH {calculatePrice().toLocaleString()}</span>
             </div>
           </div>
 
