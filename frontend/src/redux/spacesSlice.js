@@ -17,7 +17,7 @@ const initialSpaces = [
     amenities: ['WiFi', 'Parking', 'Meeting Room', 'Kitchen', 'Air Conditioning'],
     rating: 4.8,
     reviews: 24,
-       available: true,
+    available: true,
     featured: true,
   },
   {
@@ -38,42 +38,7 @@ const initialSpaces = [
     featured: true,
   },
   {
-       id: 3,
-    name: 'Conference Center',
-    description: 'State-of-the-art conference facility with AV equipment, breakout rooms, and professional catering options.',
-    type: 'conference',
-    category: 'Conference Room',
-    price: 500,
-    priceUnit: 'day',
-    capacity: 100,
-    location: '789 Business Blvd, Nairobi - Westlands',
-    image: 'https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=800&q=80',
-    amenities: ['WiFi', 'AV Equipment', 'Catering', 'Parking', 'Security'],
-    rating: 4.7,
-    reviews: 42,
-    available: true,
-    featured: false,
-  },
-  {
-    id: 4,
-    name: 'Co-Working Desk',
-    description: 'Flexible co-working space with dedicated desk, high-speed internet, and access to all community amenities.',
-    type: 'coworking',
-    category: 'Co-Working Space',
-    price: 299,
-    priceUnit: 'month',
-    capacity: 1,
-    location: '321 Startup Lane, Nairobi - Runda',
-    image: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&q=80',
-    amenities: ['WiFi', 'Desk', 'Locker', 'Coffee', 'Meeting Room Access'],
-    rating: 4.6,
-    reviews: 67,
-    available: true,
-    featured: true,
-  },
-  {
-    id: 5,
-    name: 'Wellness Studio',   id: 3,
+    id: 3,
     name: 'Conference Center',
     description: 'State-of-the-art conference facility with AV equipment, breakout rooms, and professional catering options.',
     type: 'conference',
@@ -123,7 +88,7 @@ const initialSpaces = [
     available: true,
     featured: false,
   },
-{
+  {
     id: 6,
     name: 'Event Venue Hall',
     description: 'Elegant event venue perfect for weddings, parties, and corporate events. Fully customizable space.',
@@ -156,7 +121,7 @@ const initialSpaces = [
     reviews: 156,
     available: true,
     featured: false,
-      },
+  },
   {
     id: 8,
     name: 'Podcast Studio',
@@ -174,7 +139,7 @@ const initialSpaces = [
     available: true,
     featured: false,
   },
-   {
+  {
     id: 9,
     name: 'Training Classroom',
     description: 'Spacious classroom designed for training sessions with individual workstations and presentation equipment.',
@@ -191,7 +156,7 @@ const initialSpaces = [
     available: true,
     featured: false,
   },
-    {
+  {
     id: 10,
     name: 'Photography Studio',
     description: 'Professional photography studio with cyclorama wall, various backdrops, and professional lighting setup.',
@@ -208,7 +173,7 @@ const initialSpaces = [
     available: true,
     featured: false,
   },
-   {
+  {
     id: 11,
     name: 'Virtual Office Package',
     description: 'Professional business address with mail handling and meeting room access.',
@@ -225,7 +190,7 @@ const initialSpaces = [
     available: true,
     featured: false,
   },
-   {
+  {
     id: 12,
     name: 'Pop-up Retail Space',
     description: 'Prime retail location perfect for pop-up shops, product launches, and seasonal sales.',
@@ -260,6 +225,7 @@ const initialState = {
   loading: false,
   error: null,
 };
+
 const spacesSlice = createSlice({
   name: 'spaces',
   initialState,
@@ -274,9 +240,7 @@ const spacesSlice = createSlice({
         available: true,
       };
       state.spaces.push(newSpace);
-
-
-  },
+    },
     
     // Update existing space (Admin)
     updateSpace: (state, action) => {
@@ -292,7 +256,7 @@ const spacesSlice = createSlice({
     },
     
     // Select a space for viewing
-      selectSpace: (state, action) => {
+    selectSpace: (state, action) => {
       state.selectedSpace = state.spaces.find(s => s.id === action.payload) || null;
     },
     
@@ -314,7 +278,7 @@ const spacesSlice = createSlice({
         priceMin: '',
         priceMax: '',
         location: '',
-     capacity: '',
+        capacity: '',
         searchQuery: '',
       };
     },
@@ -388,7 +352,9 @@ export const selectFilteredSpaces = (state) => {
       s.category.toLowerCase().includes(query)
     );
   }
-    switch (sortBy) {
+  
+  // Apply sorting
+  switch (sortBy) {
     case 'price-low':
       filtered.sort((a, b) => a.price - b.price);
       break;
@@ -400,7 +366,7 @@ export const selectFilteredSpaces = (state) => {
       break;
     case 'reviews':
       filtered.sort((a, b) => b.reviews - a.reviews);
-            break;
+      break;
     case 'featured':
     default:
       filtered.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
@@ -416,14 +382,5 @@ export const selectCategories = (state) => {
 };
 
 export default spacesSlice.reducer;
-  
-
-
-
-
-
-
-
-
 
 
