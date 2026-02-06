@@ -208,6 +208,24 @@ const initialSpaces = [
     available: true,
     featured: false,
   },
+   {
+    id: 11,
+    name: 'Virtual Office Package',
+    description: 'Professional business address with mail handling and meeting room access.',
+    type: 'virtual',
+    category: 'Virtual Office',
+    price: 99,
+    priceUnit: 'month',
+    capacity: 1,
+    location: '555 Business Center, Nairobi - CBD',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80',
+    amenities: ['Business Address', 'Mail Handling', 'Meeting Room Access', 'Call Answering'],
+    rating: 4.4,
+    reviews: 45,
+    available: true,
+    featured: false,
+  },
+
 
 
 
