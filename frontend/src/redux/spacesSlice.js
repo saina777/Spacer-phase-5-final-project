@@ -334,6 +334,63 @@ const spacesSlice = createSlice({
   },
 });
 
+// Export actions
+export const {
+  addSpace,
+  updateSpace,
+  deleteSpace,
+  selectSpace,
+  clearSelectedSpace,
+  setFilters,
+  clearFilters,
+  setSortBy,
+  toggleAvailability,
+} = spacesSlice.actions;
+
+// Selectors
+export const selectAllSpaces = (state) => state.spaces.spaces;
+export const selectFeaturedSpaces = (state) => state.spaces.spaces.filter(s => s.featured);
+export const selectSelectedSpace = (state) => state.spaces.selectedSpace;
+export const selectFilters = (state) => state.spaces.filters;
+
+// Filtered and sorted spaces selector
+export const selectFilteredSpaces = (state) => {
+  const { spaces, filters, sortBy } = state.spaces;
+  
+  let filtered = [...spaces];
+  
+  // Apply filters
+  if (filters.type) {
+    filtered = filtered.filter(s => s.type === filters.type);
+  }
+  if (filters.category) {
+    filtered = filtered.filter(s => s.category === filters.category);
+  }
+  if (filters.priceMin) {
+    filtered = filtered.filter(s => s.price >= Number(filters.priceMin));
+  }
+  if (filters.priceMax) {
+    filtered = filtered.filter(s => s.price <= Number(filters.priceMax));
+  }
+  if (filters.location) {
+    filtered = filtered.filter(s => 
+      s.location.toLowerCase().includes(filters.location.toLowerCase())
+    );
+  }
+  if (filters.capacity) {
+    filtered = filtered.filter(s => s.capacity >= Number(filters.capacity));
+  }
+  if (filters.searchQuery) {
+    const query = filters.searchQuery.toLowerCase();
+    filtered = filtered.filter(s => 
+      s.name.toLowerCase().includes(query) ||
+      s.description.toLowerCase().includes(query) ||
+      s.category.toLowerCase().includes(query)
+    );
+  }
+  
+
+
 
 
 
