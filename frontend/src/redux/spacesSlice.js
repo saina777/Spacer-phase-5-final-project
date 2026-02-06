@@ -174,6 +174,24 @@ const initialSpaces = [
     available: true,
     featured: false,
   },
+   {
+    id: 9,
+    name: 'Training Classroom',
+    description: 'Spacious classroom designed for training sessions with individual workstations and presentation equipment.',
+    type: 'classroom',
+    category: 'Training Space',
+    price: 200,
+    priceUnit: 'day',
+    capacity: 25,
+    location: '333 Education Way, Nairobi - Kilimani',
+    image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80',
+    amenities: ['WiFi', 'Projector', 'Whiteboard', 'Individual Desks', 'Coffee Machine'],
+    rating: 4.6,
+    reviews: 34,
+    available: true,
+    featured: false,
+  },
+
 
 
 
