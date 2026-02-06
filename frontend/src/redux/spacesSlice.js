@@ -314,6 +314,26 @@ const spacesSlice = createSlice({
         priceMin: '',
         priceMax: '',
         location: '',
+     capacity: '',
+        searchQuery: '',
+      };
+    },
+    
+    // Set sort option
+    setSortBy: (state, action) => {
+      state.sortBy = action.payload;
+    },
+    
+    // Toggle space availability
+    toggleAvailability: (state, action) => {
+      const space = state.spaces.find(s => s.id === action.payload);
+      if (space) {
+        space.available = !space.available;
+      }
+    },
+  },
+});
+
 
 
 
