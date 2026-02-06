@@ -225,7 +225,41 @@ const initialSpaces = [
     available: true,
     featured: false,
   },
+   {
+    id: 12,
+    name: 'Pop-up Retail Space',
+    description: 'Prime retail location perfect for pop-up shops, product launches, and seasonal sales.',
+    type: 'retail',
+    category: 'Retail Space',
+    price: 250,
+    priceUnit: 'day',
+    capacity: 10,
+    location: '666 Shopping Plaza, Nairobi - CBD',
+    image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80',
+    amenities: ['WiFi', 'Display Units', 'POS System', 'Security', 'Parking'],
+    rating: 4.7,
+    reviews: 28,
+    available: true,
+    featured: true,
+  },
+];
 
+const initialState = {
+  spaces: initialSpaces,
+  selectedSpace: null,
+  filters: {
+    type: '',
+    category: '',
+    priceMin: '',
+    priceMax: '',
+    location: '',
+    capacity: '',
+    searchQuery: '',
+  },
+  sortBy: 'featured',
+  loading: false,
+  error: null,
+};
 
 
 
