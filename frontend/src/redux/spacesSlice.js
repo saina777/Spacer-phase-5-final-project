@@ -156,6 +156,25 @@ const initialSpaces = [
     reviews: 156,
     available: true,
     featured: false,
+      },
+  {
+    id: 8,
+    name: 'Podcast Studio',
+    description: 'Professional podcast recording studio with soundproofing, quality microphones, and mixing equipment.',
+    type: 'studio',
+    category: 'Recording Studio',
+    price: 100,
+    priceUnit: 'hour',
+    capacity: 4,
+    location: '222 Audio Lane, Nairobi - Westlands',
+    image: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&q=80',
+    amenities: ['WiFi', 'Microphones', 'Mixing Console', 'Soundproofing', 'Headphones'],
+    rating: 4.9,
+    reviews: 23,
+    available: true,
+    featured: false,
+  },
+
 
 
 
