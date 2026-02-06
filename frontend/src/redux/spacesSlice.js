@@ -109,5 +109,20 @@ const initialSpaces = [
   {
     id: 5,
     name: 'Wellness Studio',
+    description: 'Peaceful yoga and wellness studio with mirrored walls, hardwood floors, and serene atmosphere.',
+    type: 'studio',
+    category: 'Wellness Center',
+    price: 50,
+    priceUnit: 'hour',
+    capacity: 20,
+    location: '555 Peaceful Way, Nairobi - Karen',
+    image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80',
+    amenities: ['WiFi', 'Yoga Mats', 'Sound System', 'Lockers', 'Showers'],
+    rating: 4.9,
+    reviews: 31,
+    available: true,
+    featured: false,
+  },
+
 
 
