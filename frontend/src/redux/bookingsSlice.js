@@ -79,4 +79,33 @@ export const createBooking = createAsyncThunk(
 const bookingsSlice = createSlice({
   name: 'bookings',
   initialState,
+  reducers: {
+    // Update booking status (Admin)
+    updateBookingStatus: (state, action) => {
+      const { id, status } = action.payload;
+      const booking = state.bookings.find(b => b.id === id);
+      if (booking) {
+        booking.status = status;
+      }
+    },
+    
+    // Update booking details
+    updateBooking: (state, action) => {
+      const index = state.bookings.findIndex(b => b.id === action.payload.id);
+      if (index !== -1) {
+        state.bookings[index] = { ...state.bookings[index], ...action.payload };
+      }
+    },
+    
+    // Cancel booking
+    cancelBooking: (state, action) => {
+      const booking = state.bookings.find(b => b.id === action.payload);
+      if (booking) {
+        booking.status = 'cancelled';
+      }
+    },
+    
+    // Delete booking (Admin)
+    deleteBooking: (state, action) => {
+
 
