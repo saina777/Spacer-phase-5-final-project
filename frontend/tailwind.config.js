@@ -18,7 +18,6 @@ export default {
           700: '#0369a1',
           800: '#075985',
           900: '#0c4a6e',
-          950: '#082f49',
         },
         accent: {
           50: '#fdf4ff',
@@ -31,14 +30,15 @@ export default {
           700: '#a21caf',
           800: '#86198f',
           900: '#701a75',
-          950: '#4a044e',
         }
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
       },
-    },
-  },
-  plugins: [],
-}
-
+      animation: {
+        'fade-in': 'fadeIn 0.5s ease-out',
+        'slide-up': 'slideUp 0.5s ease-out',
+        'slide-down': 'slideDown 0.3s ease-out',
+        'scale-in': 'scaleIn 0.3s ease-out',
+        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+      },
