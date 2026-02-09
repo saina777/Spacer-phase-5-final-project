@@ -6,9 +6,6 @@ import uuid
 from app.database.base import Base
 
 class GUID(TypeDecorator):
-    """Platform-independent GUID type.
-    Uses PostgreSQL's UUID type, otherwise uses CHAR(32), storing as string without dashes.
-    """
     impl = CHAR
     cache_ok = True
 

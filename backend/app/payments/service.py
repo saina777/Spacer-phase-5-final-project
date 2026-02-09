@@ -6,27 +6,9 @@ from typing import Dict, Any
 from app.database.models import Booking
 from app.utils.invoice import generate_invoice_number
 
-# Configure logging
 logger = logging.getLogger(__name__)
 
 def process_payment(db: Session, user: Any, booking_id: int) -> Dict[str, Any]:
-    """
-    Processes a payment for a specific booking.
-    
-    This function validates the booking existence, ownership, and current status
-    before marking it as PAID and generating an invoice number.
-    
-    Args:
-        db (Session): Database session.
-        user (Any): The current authenticated user.
-        booking_id (int): ID of the booking to pay for.
-        
-    Returns:
-        Dict[str, Any]: A dictionary containing payment confirmation details.
-        
-    Raises:
-        HTTPException: If the booking is not found or already paid.
-    """
     logger.info(f"Processing payment for booking_id: {booking_id} by user_id: {user.id}")
 
     booking = db.query(Booking).filter(
@@ -48,7 +30,6 @@ def process_payment(db: Session, user: Any, booking_id: int) -> Dict[str, Any]:
             detail="Booking already paid"
         )
     
-    # Additional state validation
     if booking.status == "CANCELLED":
         logger.warning(f"Attempted to pay for cancelled booking {booking_id}")
         raise HTTPException(
