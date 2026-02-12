@@ -1,15 +1,18 @@
 from pydantic_settings import BaseSettings
+from pydantic import Field
 
 
 class Settings(BaseSettings):
-    DATABASE_URL: str
-    SECRET_KEY: str
-    ALGORITHM: str
-    ACCESS_TOKEN_EXPIRE_MINUTES: int
+    # DATABASE
+    database_url: str = Field(..., env="DATABASE_URL")
+
+    # JWT
+    secret_key: str = Field(..., env="SECRET_KEY")
+    algorithm: str = Field(default="HS256")
+    access_token_expire_minutes: int = Field(default=60)
 
     class Config:
         env_file = ".env"
-        extra = "ignore"
 
 
 settings = Settings()
