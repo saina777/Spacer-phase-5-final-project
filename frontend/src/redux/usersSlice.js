@@ -10,6 +10,21 @@ export const fetchUsers = createAsyncThunk('users/fetchUsers', async (_, { rejec
   } catch (err) { return rejectWithValue(err.message); }
 });
 
+export const createUser = createAsyncThunk(
+  'users/createUser',
+  async (userData, { rejectWithValue }) => {
+    try {
+      const data = await fetchAPI('/users', {
+        method: 'POST',
+        body: JSON.stringify(userData),
+      });
+      return data; // assuming backend returns the created user object
+    } catch (err) {
+      return rejectWithValue(err.message || 'Failed to create user');
+    }
+  }
+);
+
 export const updateUserAPI = createAsyncThunk('users/updateUser', async ({ id, ...updates }, { rejectWithValue }) => {
   try {
     const data = await fetchAPI(`/users/${id}`, { method: 'PUT', body: JSON.stringify(updates) });
@@ -52,6 +67,19 @@ const usersSlice = createSlice({
       .addCase(fetchUsers.fulfilled, (s, a) => { s.loading = false; s.users = a.payload; })
       .addCase(fetchUsers.rejected, (s, a) => { s.loading = false; s.error = a.payload; })
 
+      .addCase(createUser.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(createUser.fulfilled, (state, action) => {
+        state.loading = false;
+        state.users.push(action.payload);
+      })
+      .addCase(createUser.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      })
+
       .addCase(updateUserAPI.pending, (s) => { s.loading = true; })
       .addCase(updateUserAPI.fulfilled, (s, a) => {
         s.loading = false;
@@ -75,6 +103,13 @@ const usersSlice = createSlice({
 });
 
 export const { selectUser, clearSelectedUser, updateUserStats } = usersSlice.actions;
+
+// Clean action names for components (aliases for the API thunks)
+export const addUser = createUser;
+export const updateUser = updateUserAPI;
+export const deleteUser = deleteUserAPI;
+export const updateUserRole = updateUserRoleAPI;
+
 export const selectAllUsers = (state) => state.users.users;
 export const selectSelectedUser = (state) => state.users.selectedUser;
 export const selectUserById = (id) => (state) => state.users.users.find(u => u.id === id);
@@ -82,4 +117,5 @@ export const selectUsersByRole = (role) => (state) => state.users.users.filter(u
 export const selectClientCount = (state) => state.users.users.filter(u => u.role === 'client').length;
 export const selectAdminCount = (state) => state.users.users.filter(u => u.role === 'admin').length;
 export const selectTotalRevenue = (state) => state.users.users.reduce((sum, u) => sum + (u.totalSpent || 0), 0);
+
 export default usersSlice.reducer;
