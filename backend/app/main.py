@@ -20,7 +20,7 @@ app.add_middleware(
     allow_origins=[
         "https://spacer-phase-5-final-project-x34l.vercel.app",
         "http://localhost:3000",
-        "https://spacer-phase-5-final-project-8.onrender.com",
+        "https://spacer-phase-5-final-project-ecae.onrender.com",
     ],
     allow_credentials=True,
     allow_methods=["*"],
