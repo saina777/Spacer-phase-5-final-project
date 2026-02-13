@@ -53,7 +53,7 @@ class GUID(TypeDecorator):
 # User Model
 # =========================
 class User(Base):
-    _tablename_ = "users"
+    __tablename__ = "users"
 
     id = Column(GUID(), primary_key=True, default=uuid.uuid4)
     name = Column(String, nullable=False)
@@ -67,7 +67,7 @@ class User(Base):
 # Space Model
 # =========================
 class Space(Base):
-    _tablename_ = "spaces"
+    __tablename__ = "spaces"
 
     id = Column(GUID(), primary_key=True, default=uuid.uuid4)
     title = Column(String, nullable=False)
@@ -95,7 +95,7 @@ class Space(Base):
 # Space Images Model
 # =========================
 class SpaceImage(Base):
-    _tablename_ = "space_images"
+    __tablename__ = "space_images"
 
     id = Column(Integer, primary_key=True, index=True)
     image_url = Column(String, nullable=False)
@@ -113,7 +113,7 @@ class SpaceImage(Base):
 # Booking Model
 # =========================
 class Booking(Base):
-    _tablename_ = "bookings"
+    __tablename__ = "bookings"
 
     id = Column(GUID(), primary_key=True, default=uuid.uuid4)
     user_id = Column(GUID(), ForeignKey("users.id"))

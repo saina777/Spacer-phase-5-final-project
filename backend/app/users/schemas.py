@@ -18,8 +18,17 @@ class UserUpdate(BaseModel):
 class UserResponse(BaseModel):
     id: UUID
     name: str
-    email: EmailStr
+    email: str
     role: str
-
+    # Frontend-compatible alias fields
+    totalBookings: int = 0
+    totalSpent: float = 0.0
+    
     class Config:
         from_attributes = True
+    
+    def __init__(self, **data):
+        # Map backend role to frontend-compatible lowercase role
+        if 'role' in data and data['role']:
+            data['role'] = data['role'].lower()
+        super().__init__(**data)

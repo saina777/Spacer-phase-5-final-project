@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { createSpace, updateSpaceAPI, deleteSpaceAPI } from '../redux/spacesSlice';
-import { updateBookingStatus, deleteBooking } from '../redux/bookingsSlice';
-import { addUser, updateUser, deleteUser, updateUserRole } from '../redux/usersSlice';
+import { createSpace, updateSpaceAPI, deleteSpaceAPI, fetchSpaces } from '../redux/spacesSlice';
+import { updateBookingStatus, deleteBooking, fetchBookings } from '../redux/bookingsSlice';
+import { addUser, updateUser, deleteUser, updateUserRole, fetchUsers } from '../redux/usersSlice';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { FiPlus, FiEdit, FiTrash, FiUsers, FiMapPin, FiDollarSign, FiCalendar } from 'react-icons/fi';
@@ -43,10 +43,10 @@ const AdminDashboard = () => {
     const handleSubmit = (e) => {
       e.preventDefault();
       if (editingSpace) {
-        dispatch(updateSpace({ id: editingSpace.id, ...formData }));
+        dispatch(updateSpaceAPI({ id: editingSpace.id, ...formData }));
         toast.success('Space updated successfully');
       } else {
-        dispatch(addSpace(formData));
+        dispatch(createSpace(formData));
         toast.success('Space added successfully');
       }
       setShowSpaceModal(false);
@@ -388,7 +388,7 @@ const AdminDashboard = () => {
                         </button>
                         <button
                           onClick={() => {
-                            dispatch(deleteSpace(space.id));
+                            dispatch(deleteSpaceAPI(space.id));
                             toast.success('Space deleted successfully');
                           }}
                           className="text-red-600 hover:text-red-800"

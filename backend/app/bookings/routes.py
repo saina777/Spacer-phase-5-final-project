@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from uuid import UUID
 
-from app.database.session import SessionLocal
+from app.database.session import get_db
 from app.bookings.schemas import BookingCreate, BookingResponse
 from app.bookings.service import (
     create_booking, 
@@ -15,13 +15,6 @@ from app.core.dependencies import get_current_user
 from app.core.permissions import require_admin
 
 router = APIRouter()
-
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
 
 
 @router.post(

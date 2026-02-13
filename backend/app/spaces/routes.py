@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from uuid import UUID
 
-from app.database.session import SessionLocal
+from app.database.session import get_db
 from app.spaces.schemas import (
     SpaceCreate,
     SpaceUpdate,
@@ -17,14 +17,6 @@ from app.spaces.service import (
 from app.core.permissions import require_admin
 
 router = APIRouter()
-
-
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
 
 
 # ADMIN — Create space
